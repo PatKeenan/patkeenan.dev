@@ -17,9 +17,8 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
-      "@hooks/*": ["utils/*"],
-      "@layouts/*": ["layouts/*"],
       "@utils/*": ["utils/*"],
+      "@layouts/*": ["layouts/*"],
       "@types": ["types/index.ts"],
     }
   },

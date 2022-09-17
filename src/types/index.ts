@@ -1,5 +1,7 @@
 import type { NextComponentType, NextPage, NextPageContext } from "next";
+import type {ReactNode, ElementType} from "react";
 import type { AppInitialProps } from "next/app";
+import type { ThemeProps } from '@utils/theme';
 import type { Router } from "next/router";
 
 
@@ -20,3 +22,11 @@ export type AppProps<P = {}> = AppInitialProps & {
     __N_SSP?: boolean | undefined;
     __N_RSC?: boolean | undefined;
 }
+export interface BasePropsWithTheme extends Partial<ThemeProps> {
+    as?: ElementType;
+    children?: ReactNode
+}
+
+
+export * from './utilitiy'
+

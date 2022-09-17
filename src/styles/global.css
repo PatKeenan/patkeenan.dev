@@ -4,13 +4,16 @@
 
 @layer base {
     :root {
-        --light: '#F3F5F5';
-        --light-accent: '#96989B';
-        --primary: '#68959E';
-        --dark: '#2E353E';
-        --dark-accent: '#8C8C96';
-        --success: '#54a767';
-        --warning: '#d2972f';
-        --danger: '#f44336';
+        --light: 180 9% 96%;
+        --light-accent: 216 2% 60%;
+        --primary: 190 22% 51%;
+        --dark: 214 15% 21%;
+        --dark-accent: 240 5% 57%;
+        --success: 134 33% 49%;
+        --warning: 38 64% 50%;
+        --danger: 4 90% 58%;
+    }
+    body {
+        font-size: 16px;
     }
 }
