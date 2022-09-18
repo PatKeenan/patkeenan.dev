@@ -16,4 +16,28 @@
     body {
         font-size: 16px;
     }
+    body {
+        @apply bg-dark;
+    }
+    h1 {
+        @apply text-[4.236rem];
+    }
+    h2 {
+        @apply text-[2.618rem];
+    }
+    h3 {
+        @apply text-[1.618rem];
+    }
+}
+
+@layer components {
+    .hero {
+        @apply flex flex-col h-full justify-center align-middle items-center;
+    }
+    .h-stack {
+        @apply flex flex-row;
+    }
+    .v-stack {
+        @apply flex flex-col;
+    }
 }

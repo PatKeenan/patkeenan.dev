@@ -153,7 +153,7 @@ export const getStylesFromVariant = (
           )
         : clsx(
               bgColorOptions[variant],
-              textColorOptions['light'],
+              textColorOptions[variant == 'light' ? 'dark': 'light'],
               borderColorOptions[variant]
           );
 };
@@ -170,3 +170,6 @@ export const baseTransitionEffects: Transition = {
     type: 'tween',
     duration: .13
 }
+
+
+

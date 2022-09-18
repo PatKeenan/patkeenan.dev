@@ -1,8 +1,9 @@
 import type { NextComponentType, NextPage, NextPageContext } from "next";
 import type {ReactNode, ElementType} from "react";
 import type { AppInitialProps } from "next/app";
-import type { ThemeProps } from '@utils/theme';
+import type { ThemeProps, ThemePropsWithVariant } from '@utils/theme';
 import type { Router } from "next/router";
+import { KeysOf } from "./utilitiy";
 
 
 export type LayoutOptions = 'main' | 'blogPage' | 'projectPage'
@@ -22,11 +23,19 @@ export type AppProps<P = {}> = AppInitialProps & {
     __N_SSP?: boolean | undefined;
     __N_RSC?: boolean | undefined;
 }
-export interface BasePropsWithTheme extends Partial<ThemeProps> {
-    as?: ElementType;
-    children?: ReactNode
-}
 
+export type ChildrenProps = {
+    children?: ReactNode | ReactNode[]}
+
+export type BasePropsWithTheme =  Partial<ThemeProps> & ChildrenProps
+export type  BasePropsWithThemeAndVariant = Partial<ThemePropsWithVariant> & ChildrenProps
+
+export const containerOptions = [ 'div','section','article', 'span', 'nav', 'ul', 'li'] as const
+export type ContainerOptionsType = { [Property in typeof containerOptions[number]]: string}
+
+export type BaseContainerProps = BasePropsWithThemeAndVariant & {
+    as?: KeysOf<ContainerOptionsType>;
+};
 
 export * from './utilitiy'
 
