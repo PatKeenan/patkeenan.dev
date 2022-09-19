@@ -8,18 +8,38 @@ import clsx from 'clsx';
 export const ElementContainer = ({
     className,
     ...props
-}: BaseContainerProps & { className?: string }) => {
-    const { as = 'div', variant, fill = 'contained', ...rest } = props;
+}: BaseContainerProps & {
+    className?: string;
+}) => {
+    const {
+        as = 'div',
+        variant,
+        fill = 'contained',
+        bgColor,
+        borderColor,
+        fontSize,
+        textColor,
+        outlineColor,
+        ...rest
+    } = props;
     const HtmlTag = motion[as];
+
+    const containerStyles = getStylesFromProps({
+        bgColor,
+        borderColor,
+        textColor,
+        outlineColor,
+    });
+
     return (
         <AnimatePresence>
             <HtmlTag
                 {...rest}
                 className={clsx(
-                    getStylesFromProps(props),
                     variant && getStylesFromVariant(variant, fill),
                     variant && variant !== 'none' && 'border',
-                    className
+                    className,
+                    containerStyles
                 )}
             />
         </AnimatePresence>

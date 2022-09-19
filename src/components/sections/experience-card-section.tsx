@@ -1,10 +1,9 @@
-import { Article, Div } from '@components/common';
+import { Article, Div, Section } from '@components/common';
 import Image from 'next/image';
 
 export const ExperienceCard = () => {
     return (
-        <Article
-            variant="none"
+        <Section
             borderColor="primary"
             className="text-center w-[400px] md:w-[600px] h-[80%] rounded-md flex-shrink-0 snap-center p-10 border-4"
         >
@@ -30,6 +29,6 @@ export const ExperienceCard = () => {
                     <li>Desription</li>
                 </ul>
             </Div>
-        </Article>
+        </Section>
     );
 };

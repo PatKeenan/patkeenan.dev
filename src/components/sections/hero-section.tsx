@@ -1,10 +1,10 @@
 import { Div, Section } from '@components/common';
-import { BasePropsWithThemeAndVariant } from '@types';
+import { BaseContainerProps } from '@types';
 import { siteWidth } from '@utils/theme';
 import clsx from 'clsx';
 import React from 'react';
 
-type HeroProps = BasePropsWithThemeAndVariant & {
+type HeroProps = BaseContainerProps & {
     sectionTitle?: string;
     id?: string;
     maxWidth?: boolean;

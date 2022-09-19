@@ -16,7 +16,7 @@ export interface ThemeProps {
     outlineColor: KeysOf<typeof outlineColorOptions>;
 }
 
-export interface ThemePropsWithVariant extends Partial<ThemeProps> {
+export type ThemePropsWithVariant = Partial<ThemeProps> &  {
     variant: VariantOptionsKeys;
     fill: FillOptions;
 }
@@ -131,7 +131,7 @@ export const marginOptions = {
 export const siteWidth = 'max-w-6xl mx-auto'
 
 
-export function getStylesFromProps(props: Partial<ThemeProps>) {
+export function getStylesFromProps(props: Partial<ThemeProps | ThemePropsWithVariant>) {
     const { padding, fontSize, textColor, bgColor, outlineColor, borderColor } = props;
     return clsx(
         fontSize && fontSizeOptions[fontSize],

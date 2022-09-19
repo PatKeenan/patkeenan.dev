@@ -3,7 +3,7 @@ import type {ReactNode, ElementType} from "react";
 import type { AppInitialProps } from "next/app";
 import type { ThemeProps, ThemePropsWithVariant } from '@utils/theme';
 import type { Router } from "next/router";
-import { KeysOf } from "./utilitiy";
+import { KeysOf } from "./utility";
 
 
 export type LayoutOptions = 'main' | 'blogPage' | 'projectPage'
@@ -37,5 +37,5 @@ export type BaseContainerProps = BasePropsWithThemeAndVariant & {
     as?: KeysOf<ContainerOptionsType>;
 };
 
-export * from './utilitiy'
+export * from './utility'
 
