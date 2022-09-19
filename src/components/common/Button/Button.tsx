@@ -52,6 +52,7 @@ export const Button = (props: ButtonProps) => {
                 : 'min-w-[100px]  px-4 py-2 rounded-md',
             'border-2 text-in shadow focus:ring ring-blue-400 ring-offset-1 outline-none focus:outline-none ',
             className,
+            variant == ('success' || 'primary') && href && 'hover:text-dark',
             buttonStyles
         ),
     };

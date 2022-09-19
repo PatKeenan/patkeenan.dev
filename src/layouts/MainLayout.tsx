@@ -16,13 +16,13 @@ export const MainLayout = ({ children }: ChildrenProps) => {
                 <Nav
                     className={clsx(
                         siteWidth,
-                        'h-stack w-full justify-between'
+                        'h-stack w-full justify-between text-sm lg:text-base'
                     )}
                 >
                     <Link href="#home">
                         <a>Pat Keenan</a>
                     </Link>
-                    <Ul className="h-stack space-x-4 text-md items-center">
+                    <Ul className="h-stack space-x-4  items-center">
                         <Li>
                             <Link href="#experience">
                                 <a>Experience</a>
@@ -40,7 +40,7 @@ export const MainLayout = ({ children }: ChildrenProps) => {
                         </Li>
                         <Li>
                             <Link href="#contact">
-                                <a>contact</a>
+                                <a>Contact</a>
                             </Link>
                         </Li>
                     </Ul>

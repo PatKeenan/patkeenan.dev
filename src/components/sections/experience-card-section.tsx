@@ -1,7 +1,20 @@
-import { Article, Div, Section } from '@components/common';
+import { Div, Li, Section, Ul } from '@components/common';
 import Image from 'next/image';
 
-export const ExperienceCard = () => {
+import { IconType } from 'react-icons';
+
+export type ExperienceCardProps = {
+    logoImagePath: string;
+    title: string;
+    role: string;
+    dates: string;
+    icons?: IconType[];
+    responsibilities: string[];
+};
+
+export const ExperienceCard = (props: ExperienceCardProps) => {
+    const { logoImagePath, title, role, responsibilities, icons, dates } =
+        props;
     return (
         <Section
             borderColor="primary"
@@ -10,7 +23,7 @@ export const ExperienceCard = () => {
             <div className="h-[100px] w-[100px] mx-auto relative justify-center ">
                 <Image
                     priority
-                    src="/patrick-keenan.jpeg"
+                    src={logoImagePath}
                     alt="Patrick Keenan"
                     height={100}
                     width={100}
@@ -18,16 +31,49 @@ export const ExperienceCard = () => {
                     className="rounded-full object-cover"
                 />
             </div>
-            <Div className="v-stack justify-center space-y-4">
-                <h4 className="text-3xl font-bold tracking-wide">Job Title</h4>
-                <div>technology logos</div>
+            <Div className="v-stack justify-center space-y-2  mt-4">
+                <h4 className="text-3xl font-bold tracking-wide text-light">
+                    {title}
+                </h4>
 
-                <ul>
-                    <li>Desription</li>
-                    <li>Desription</li>
-                    <li>Desription</li>
-                    <li>Desription</li>
-                </ul>
+                <Div className="space-y-2\1">
+                    <div className="h-stack space-x-4 items-center justify-center">
+                        <p className="tracking-wide uppercase text-sm text-light-accent">
+                            {role}
+                        </p>
+                        <p className="text-sm text-success font-semibold">
+                            {dates}
+                        </p>
+                    </div>
+
+                    <Div textColor="primary">
+                        <Ul
+                            className="h-stack space-x-2 justify-center"
+                            textColor="primary"
+                        >
+                            {icons?.map((Icon, index) => (
+                                <Li
+                                    key={index}
+                                    bgColor="transparent"
+                                    className="h-8 w-8 flex items-center"
+                                >
+                                    <Icon className="mx-auto h-[80%] w-[80%]" />
+                                </Li>
+                            ))}
+                        </Ul>
+                    </Div>
+                </Div>
+
+                <Ul className="text-left list-disc">
+                    {responsibilities.map((item, index) => (
+                        <Li
+                            key={index}
+                            className="list-item"
+                        >
+                            {item}
+                        </Li>
+                    ))}
+                </Ul>
             </Div>
         </Section>
     );

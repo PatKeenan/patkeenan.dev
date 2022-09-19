@@ -14,6 +14,10 @@ export const Introduction = (props: HomePageContainersType) => {
             <Div className="v-stack lg:h-stack justify-center gap-4 lg:gap-4 my-auto">
                 <Div className="text-center lg:text-left w-full lg:w-1/3 h-full">
                     <div className="h-[250px] w-[250px] mx-auto relative justify-center ">
+                        <div
+                            className="h-10 w-10 lg:h-8 lg:w-8 absolute z-10 right-8 rounded-full bottom-2 lg:-bottom-[.35rem] lg:-right-[.4rem] lg:rounded-lg bg-success border-[6px] border-dark"
+                            title="Open to exploring new opportunities"
+                        />
                         <Image
                             priority
                             src="/patrick-keenan.jpeg"
@@ -21,11 +25,7 @@ export const Introduction = (props: HomePageContainersType) => {
                             height={250}
                             width={250}
                             layout="responsive"
-                            className="rounded-full lg:rounded-lg object-cover"
-                        />
-                        <div
-                            className="h-10 w-10 lg:h-8 lg:w-8 absolute right-8 rounded-full bottom-2 lg:-bottom-[.35rem] lg:-right-[.4rem] lg:rounded-lg bg-green-400 border-[6px] border-dark"
-                            title="Open to exploring new opportunities"
+                            className="rounded-full lg:rounded-lg object-cover z-0"
                         />
                     </div>
                 </Div>
