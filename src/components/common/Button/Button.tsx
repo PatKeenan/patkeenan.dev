@@ -5,45 +5,70 @@ import clsx from 'clsx';
 import {
     getStylesFromProps,
     getStylesFromVariant,
-    ThemePropsWithVariant,
     baseTapEffects,
     baseHoverEffects,
     baseTransitionEffects,
 } from '@utils/theme';
 
-type ButtonProps = Partial<ThemePropsWithVariant> & HTMLMotionProps<'button'>;
+import type { ThemePropsWithVariant } from '@utils/theme';
+import Link from 'next/link';
 
-export const Button = ({
-    children,
-    className,
-    variant = 'primary',
-    fill = 'contained',
-    bgColor,
-    borderColor,
-    textColor,
-    outlineColor,
-    ...buttonProps
-}: ButtonProps) => {
+export type ButtonProps = Partial<ThemePropsWithVariant> &
+    HTMLMotionProps<'button'> & {
+        href?: string;
+        as?: 'icon' | 'button';
+    };
+
+export const Button = (props: ButtonProps) => {
+    const {
+        children,
+        className,
+        as,
+        href,
+        variant = 'primary',
+        fill = 'contained',
+        bgColor,
+        borderColor,
+        textColor,
+        outlineColor,
+        ...buttonProps
+    } = props;
+
     const buttonStyles = getStylesFromProps({
         bgColor,
         borderColor,
         textColor,
         outlineColor,
     });
-    return (
+
+    const sharedProperties = {
+        whileHover: baseHoverEffects,
+        whileTap: baseTapEffects,
+        transition: baseTransitionEffects,
+        className: clsx(
+            variant && getStylesFromVariant(variant, fill),
+            as == 'icon'
+                ? 'w-8 h-8 grid place-items-center rounded-full'
+                : 'min-w-[100px]  px-4 py-2 rounded-md',
+            'border-2 text-in shadow focus:ring ring-blue-400 ring-offset-1 outline-none focus:outline-none ',
+            className,
+            buttonStyles
+        ),
+    };
+
+    return !href ? (
         <motion.button
-            whileTap={baseTapEffects}
-            whileHover={baseHoverEffects}
-            transition={baseTransitionEffects}
-            className={clsx(
-                variant && getStylesFromVariant(variant, fill),
-                'border-2 text-in shadow focus:ring ring-blue-400 ring-offset-1 outline-none focus:outline-none min-w-[100px] px-4 py-2 rounded-md',
-                className,
-                buttonStyles
-            )}
+            {...sharedProperties}
             {...buttonProps}
         >
             {children}
         </motion.button>
+    ) : (
+        <Link
+            href={href}
+            passHref
+        >
+            <motion.a {...sharedProperties}>{children}</motion.a>
+        </Link>
     );
 };

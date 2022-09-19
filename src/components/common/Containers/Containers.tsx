@@ -17,8 +17,8 @@ export const ElementContainer = ({
                 {...rest}
                 className={clsx(
                     getStylesFromProps(props),
-                    variant && 'border',
                     variant && getStylesFromVariant(variant, fill),
+                    variant && variant !== 'none' && 'border',
                     className
                 )}
             />

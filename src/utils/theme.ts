@@ -66,7 +66,7 @@ export const bgColorOptions: VariantOptionsType = {
     success: 'bg-success',
     warning: 'bg-warning',
     danger: 'bg-danger',
-    none: 'bg-none',
+    none: '',
     transparent: 'bg-transparent'
 };
 
@@ -79,7 +79,7 @@ export const outlineColorOptions: VariantOptionsType = {
     success: 'outline-success',
     warning: 'outline-warning',
     danger: 'outline-danger',
-    none: 'outline-none',
+    none: '',
     transparent: 'outline-transparent'
 }
 
@@ -92,7 +92,7 @@ export const borderColorOptions: VariantOptionsType = {
     success: 'border-success',
     warning: 'border-warning',
     danger: 'border-danger',
-    none: 'border-none',
+    none: '',
     transparent: 'border-transparent'
 }
 
@@ -105,7 +105,7 @@ export const ringColorOptions: VariantOptionsType = {
     success: 'ring-success',
     warning: 'ring-warning',
     danger: 'ring-danger',
-    none: 'ring-inherit',
+    none: '',
     transparent: 'ring-transparent'
 }
 
@@ -118,7 +118,7 @@ export const textColorOptions: VariantOptionsType = {
     success: 'text-success',
     warning: 'text-warning',
     danger: 'text-danger',
-    none: 'text-inherit',
+    none: '',
     transparent: 'text-transparent'
 };
 
@@ -127,6 +127,8 @@ export const marginOptions = {
     'primary-x': 'mx-2',
     'primary-y': 'my-2',
 };
+
+export const siteWidth = 'max-w-6xl mx-auto'
 
 
 export function getStylesFromProps(props: Partial<ThemeProps>) {

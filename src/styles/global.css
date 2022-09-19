@@ -28,11 +28,17 @@
     h3 {
         @apply text-[1.618rem];
     }
+    a {
+        @apply hover:text-primary transition-colors duration-75 ease-in;
+    }
+    body {
+        @apply scroll-smooth;
+    }
 }
 
 @layer components {
     .hero {
-        @apply flex flex-col h-full justify-center align-middle items-center;
+        @apply v-stack h-screen min-h-screen overflow-hidden justify-center align-middle items-center;
     }
     .h-stack {
         @apply flex flex-row;
