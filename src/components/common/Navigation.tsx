@@ -1,11 +1,11 @@
-import React from 'react';
 import { Div, Li, Nav, Ul } from '@components/common';
-import { siteWidth } from '@utils/theme';
-import Link from 'next/link';
-import clsx from 'clsx';
 import { RiMenu5Fill } from 'react-icons/ri';
 import { IoMdClose } from 'react-icons/io';
+import { siteWidth } from '@utils/theme';
 import { useClickAway } from '@hooks';
+import Link from 'next/link';
+import React from 'react';
+import clsx from 'clsx';
 
 export const Navigation = () => {
     const navItems = [

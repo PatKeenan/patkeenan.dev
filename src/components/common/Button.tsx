@@ -10,7 +10,7 @@ import {
     baseTransitionEffects,
 } from '@utils/theme';
 
-import type { ThemePropsWithVariant } from '@utils/theme';
+import type { ThemePropsWithVariant } from 'types/theme';
 import Link from 'next/link';
 
 export type ButtonProps = Partial<ThemePropsWithVariant> &

@@ -1,9 +1,10 @@
-import type { BaseContainerProps } from '@types';
-import { AnimatePresence, HTMLMotionProps } from 'framer-motion';
-
 import { getStylesFromProps, getStylesFromVariant } from '@utils/theme';
+import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
+
+import type { BaseContainerProps } from 'types/theme';
+import type { HTMLMotionProps } from 'framer-motion';
 
 export const ElementContainer = ({
     className,
