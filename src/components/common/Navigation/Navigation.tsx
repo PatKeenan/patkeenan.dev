@@ -70,7 +70,7 @@ export const Navigation = () => {
                     )}
                     <button
                         onClick={() => handleToggle()}
-                        className=" rounded-bl-lg justify-center h-8 w-8 appearance-none text-success absolute -top-1 right-0 bg-dark p-1"
+                        className=" rounded-bl-lg justify-center h-8 w-8 appearance-none text-light absolute -top-1 right-0 bg-dark p-1"
                     >
                         {active ? (
                             <IoMdClose

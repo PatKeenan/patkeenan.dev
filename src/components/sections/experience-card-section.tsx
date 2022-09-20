@@ -18,9 +18,9 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
     return (
         <Section
             borderColor="primary"
-            className="text-center w-[400px] md:w-[600px] h-[80%] rounded-md flex-shrink-0 snap-center p-10 border-4"
+            className="text-center w-[325px] md:w-[450px] h-full rounded-md flex-shrink-0 snap-center border-4 py-8"
         >
-            <div className="h-[100px] w-[100px] mx-auto relative justify-center ">
+            <div className="h-[100px] w-[100px] mx-auto relative justify-center">
                 <Image
                     priority
                     src={logoImagePath}
@@ -32,15 +32,13 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
                 />
             </div>
             <Div className="v-stack justify-center space-y-2  mt-4">
-                <h4 className="text-3xl font-bold tracking-wide text-light">
+                <h4 className="text-xl md:text-3xl font-bold tracking-wide text-light">
                     {title}
                 </h4>
 
                 <Div className="space-y-2\1">
-                    <div className="h-stack space-x-4 items-center justify-center">
-                        <p className="tracking-wide uppercase text-sm text-light-accent">
-                            {role}
-                        </p>
+                    <div className="h-stack space-x-4 items-center justify-center text-light-accent text-xs md:text-sm">
+                        <p className="tracking-wide uppercase">{role}</p>
                         <p className="text-sm text-success font-semibold">
                             {dates}
                         </p>
@@ -64,11 +62,11 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
                     </Div>
                 </Div>
 
-                <Ul className="text-left list-disc">
+                <Ul className="text-left list-disc px-6 space-y-2">
                     {responsibilities.map((item, index) => (
                         <Li
                             key={index}
-                            className="list-item"
+                            className="list-item tracking-wide"
                         >
                             {item}
                         </Li>
