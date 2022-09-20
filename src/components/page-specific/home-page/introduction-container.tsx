@@ -11,11 +11,11 @@ export const Introduction = (props: HomePageContainersType) => {
             variant="dark"
             maxWidth
         >
-            <Div className="v-stack lg:h-stack justify-center gap-2 lg:gap-4 my-auto">
+            <Div className="v-stack lg:h-stack justify-center gap-4 my-auto">
                 <Div className="text-center lg:text-left w-full lg:w-1/3 h-full">
-                    <div className="h-[150px] w-[150px] md:h-[250px] md:w-[250px] mx-auto relative justify-center ">
+                    <div className="h-[175px] w-[175px] md:h-[250px] md:w-[250px] mx-auto relative justify-center ">
                         <div
-                            className="h-10 w-10 lg:h-8 lg:w-8 absolute z-10 right-8 rounded-full bottom-2 lg:-bottom-[.35rem] lg:-right-[.4rem] lg:rounded-lg bg-success border-[6px] border-dark"
+                            className="h-8 w-8 md:h-10 md:w-10 md:10 lg:10 absolute z-10 right-3 md:right-4 md:bottom-4 rounded-full bottom-2 lg:-bottom-[.35rem] lg:-right-[.4rem] lg:rounded-lg bg-success border-[6px] border-dark"
                             title="Open to exploring new opportunities"
                         />
                         <Image

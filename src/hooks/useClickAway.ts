@@ -1,6 +1,12 @@
 import React from 'react'
 
-const useClickAway = () => {
+/**
+ * 
+ * Attach the ref to a wrapping div in order to still have access to the contents inside without it closing
+ * 
+ */
+
+export const useClickAway = () => {
     const [active, setActive] = React.useState<boolean>(false)
 
     const ref = React.useRef<HTMLDivElement | null>(null);
@@ -24,10 +30,7 @@ const useClickAway = () => {
             document.removeEventListener('mousedown', handleDocumentClick);
           }
     }
-  
     ,[active])
 
     return {ref, handleToggle, active, setActive}
 }
-
-export default useClickAway

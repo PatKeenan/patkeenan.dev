@@ -1,13 +1,11 @@
 import React from 'react';
-import { Button, Div, Li, Nav, Ul } from '@components/common';
+import { Div, Li, Nav, Ul } from '@components/common';
 import { siteWidth } from '@utils/theme';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { Menu } from '@headlessui/react';
 import { RiMenu5Fill } from 'react-icons/ri';
 import { IoMdClose } from 'react-icons/io';
-import useClickAway from 'hooks/useClickAway';
-import { motion } from 'framer-motion';
+import { useClickAway } from '@hooks';
 
 export const Navigation = () => {
     const navItems = [
@@ -77,11 +75,11 @@ export const Navigation = () => {
                         {active ? (
                             <IoMdClose
                                 className={
-                                    'h-[100%] w-[100%] transform transition-transform duration-150 ease-in active:rotate-45'
+                                    'h-[100%] w-[100%] transform transition-transform duration-150 ease active:rotate-45'
                                 }
                             />
                         ) : (
-                            <RiMenu5Fill className="h-[100%] w-[100%] transform transition-transform duration-150 ease-in active:-rotate-45" />
+                            <RiMenu5Fill className="h-[100%] w-[100%] transform transition-transform duration-150 ease active:-rotate-45" />
                         )}
                     </button>
                 </div>
