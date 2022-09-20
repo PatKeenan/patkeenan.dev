@@ -1,34 +1,19 @@
+import type {
+    ThemeProps,
+    ThemePropsWithVariant,
+    VariantOptionsKeys,
+    VariantOptionsType,
+} from 'types/theme';
+import type {
+    TargetAndTransition,
+    Transition,
+    VariantLabels,
+} from 'framer-motion';
 import clsx from 'clsx';
-import { KeysOf } from '@types';
-import { TargetAndTransition, Transition, VariantLabels } from 'framer-motion';
-export interface BaseHTMLProps {
-    children: React.ReactNode;
-}
 
-export interface ThemeProps {
-    fontSize: KeysOf<typeof fontSizeOptions>;
-    padding: KeysOf<typeof paddingOptions>;
-    margin: KeysOf<typeof marginOptions>;
-    bgColor: KeysOf<typeof bgColorOptions>;
-    textColor: KeysOf<typeof textColorOptions>;
-    ringColor: KeysOf<typeof ringColorOptions>;
-    borderColor: KeysOf<typeof borderColorOptions>;
-    outlineColor: KeysOf<typeof outlineColorOptions>;
-}
+/** -------- General --------  **/
 
-export type ThemePropsWithVariant = Partial<ThemeProps> &  {
-    variant: VariantOptionsKeys;
-    fill: FillOptions;
-}
-
-export type VariantOptionsType = {
-    [Property in typeof baseVariantsNames[number]]: string
-}
-export type VariantOptionsKeys = keyof VariantOptionsType
-
-export type FillOptions = 'outlined' | 'contained'
-
-const baseVariantsNames = [
+export const baseVariantsNames = [
     'primary',
     'warning',
     'success',
@@ -38,9 +23,12 @@ const baseVariantsNames = [
     'light-accent',
     'dark',
     'transparent',
-    'none'
+    'none',
 ] as const;
 
+export const siteWidth = 'max-w-6xl mx-auto';
+
+/** -------- Options --------  **/
 
 export const fontSizeOptions = {
     xs: 'text-xs',
@@ -67,7 +55,7 @@ export const bgColorOptions: VariantOptionsType = {
     warning: 'bg-warning',
     danger: 'bg-danger',
     none: '',
-    transparent: 'bg-transparent'
+    transparent: 'bg-transparent',
 };
 
 export const outlineColorOptions: VariantOptionsType = {
@@ -80,8 +68,8 @@ export const outlineColorOptions: VariantOptionsType = {
     warning: 'outline-warning',
     danger: 'outline-danger',
     none: '',
-    transparent: 'outline-transparent'
-}
+    transparent: 'outline-transparent',
+};
 
 export const borderColorOptions: VariantOptionsType = {
     light: 'border-light',
@@ -93,8 +81,8 @@ export const borderColorOptions: VariantOptionsType = {
     warning: 'border-warning',
     danger: 'border-danger',
     none: '',
-    transparent: 'border-transparent'
-}
+    transparent: 'border-transparent',
+};
 
 export const ringColorOptions: VariantOptionsType = {
     light: 'ring-light',
@@ -106,8 +94,8 @@ export const ringColorOptions: VariantOptionsType = {
     warning: 'ring-warning',
     danger: 'ring-danger',
     none: '',
-    transparent: 'ring-transparent'
-}
+    transparent: 'ring-transparent',
+};
 
 export const textColorOptions: VariantOptionsType = {
     light: 'text-light',
@@ -119,7 +107,7 @@ export const textColorOptions: VariantOptionsType = {
     warning: 'text-warning',
     danger: 'text-danger',
     none: '',
-    transparent: 'text-transparent'
+    transparent: 'text-transparent',
 };
 
 export const marginOptions = {
@@ -128,11 +116,23 @@ export const marginOptions = {
     'primary-y': 'my-2',
 };
 
-export const siteWidth = 'max-w-6xl mx-auto'
+export const containerOptions = [
+    'div',
+    'section',
+    'article',
+    'span',
+    'nav',
+    'ul',
+    'li',
+] as const;
 
+/** -------- Utilities --------  **/
 
-export function getStylesFromProps(props: Partial<ThemeProps | ThemePropsWithVariant>) {
-    const { padding, fontSize, textColor, bgColor, outlineColor, borderColor } = props;
+export function getStylesFromProps(
+    props: Partial<ThemeProps | ThemePropsWithVariant>
+) {
+    const { padding, fontSize, textColor, bgColor, outlineColor, borderColor } =
+        props;
     return clsx(
         fontSize && fontSizeOptions[fontSize],
         padding && paddingOptions[padding],
@@ -155,23 +155,20 @@ export const getStylesFromVariant = (
           )
         : clsx(
               bgColorOptions[variant],
-              textColorOptions[variant == 'light' ? 'dark': 'light'],
+              textColorOptions[variant == 'light' ? 'dark' : 'light'],
               borderColorOptions[variant]
           );
 };
 
-
+/** -------- Motion --------  **/
 
 export const baseTapEffects: VariantLabels | TargetAndTransition = {
-    scale: .97
-}
+    scale: 0.97,
+};
 export const baseHoverEffects: VariantLabels | TargetAndTransition = {
-    opacity: .92
-}
+    opacity: 0.92,
+};
 export const baseTransitionEffects: Transition = {
     type: 'tween',
-    duration: .13
-}
-
-
-
+    duration: 0.13,
+};

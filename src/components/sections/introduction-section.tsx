@@ -1,9 +1,9 @@
-import { Div } from '@components/common';
-import { Hero, SocialIcons } from '@components/sections';
+import { Div, Hero, SocialIcons } from '@components/common';
 import Image from 'next/image';
-import { HomePageContainersType } from './shared.types';
 
-export const Introduction = (props: HomePageContainersType) => {
+import type { HomePageHeroSectionsType } from './shared.types';
+
+export const Introduction = (props: HomePageHeroSectionsType) => {
     const { id } = props;
     return (
         <Hero

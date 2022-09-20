@@ -1,10 +1,5 @@
-import { Li, Nav, Section, Ul } from '@components/common';
-import { Navigation } from '@components/common/Navigation';
-import type { ChildrenProps } from '@types';
-import { siteWidth } from '@utils/theme';
-import clsx from 'clsx';
-
-import Link from 'next/link';
+import { Section, Navigation } from '@components/common';
+import type { ChildrenProps } from 'types/general';
 import React from 'react';
 
 export const MainLayout = ({ children }: ChildrenProps) => {

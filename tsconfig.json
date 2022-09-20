@@ -20,7 +20,7 @@
       "@hooks": ["hooks/index.ts"],
       "@layouts/*": ["layouts/*"],
       "@utils/*": ["utils/*"],
-      "@types": ["types/index.ts"],
+      "types/*": ["types/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

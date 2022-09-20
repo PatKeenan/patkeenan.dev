@@ -1,9 +1,9 @@
-import { Section } from '@components/common';
-import { ExperienceCard, Hero } from '@components/sections';
-import type { ExperienceCardProps } from '@components/sections';
 import { FaAws, FaDocker, FaPhp, FaPython, FaReact } from 'react-icons/fa';
+import { Section, ExperienceCard, Hero } from '@components/common';
 import { SiNextdotjs } from 'react-icons/si';
-import type { HomePageContainersType } from './shared.types';
+
+import type { HomePageHeroSectionsType } from './shared.types';
+import type { ExperienceCardProps } from '@components/common';
 
 const experienceData: ExperienceCardProps[] = [
     {
@@ -45,7 +45,7 @@ const experienceData: ExperienceCardProps[] = [
     },
 ];
 
-export const Experience = (props: HomePageContainersType) => {
+export const Experience = (props: HomePageHeroSectionsType) => {
     const { id } = props;
 
     return (

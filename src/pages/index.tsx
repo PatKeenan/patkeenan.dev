@@ -1,16 +1,16 @@
+import { Favicons } from '@components/other';
+import { Div } from '@components/common';
 import Head from 'next/head';
-
-import type { NextPageExtended } from '@types';
-
+import Link from 'next/link';
 import {
-    Experience,
     Introduction,
+    Experience,
     Projects,
     Skills,
     Contact,
-} from '@components/page-specific';
-import { Button, Div, Favicons } from '@components/common';
-import Link from 'next/link';
+} from '@components/sections';
+
+import type { NextPageExtended } from 'types/general';
 
 const Home: NextPageExtended = () => {
     return (

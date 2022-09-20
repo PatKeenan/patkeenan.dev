@@ -1,36 +1,34 @@
-import React from 'react'
+import React from 'react';
 
 /**
- * 
+ *
  * Attach the ref to a wrapping div in order to still have access to the contents inside without it closing
- * 
+ *
  */
 
 export const useClickAway = () => {
-    const [active, setActive] = React.useState<boolean>(false)
+    const [active, setActive] = React.useState<boolean>(false);
 
     const ref = React.useRef<HTMLDivElement | null>(null);
 
-    const handleToggle = () => setActive(!active)
+    const handleToggle = () => setActive(!active);
 
     const handleDocumentClick = (e: MouseEvent | TouchEvent) => {
-        if (ref.current && !ref.current.contains(e.target as Node)) setActive(false);
-    }
+        if (ref.current && !ref.current.contains(e.target as Node))
+            setActive(false);
+    };
 
-    React.useEffect((
-        
-    ) => {
+    React.useEffect(() => {
         if (active) {
-           return document.addEventListener('mousedown', handleDocumentClick)
-        };
+            return document.addEventListener('mousedown', handleDocumentClick);
+        }
 
         document.removeEventListener('mousedown', handleDocumentClick);
 
         return () => {
             document.removeEventListener('mousedown', handleDocumentClick);
-          }
-    }
-    ,[active])
+        };
+    }, [active]);
 
-    return {ref, handleToggle, active, setActive}
-}
+    return { ref, handleToggle, active, setActive };
+};

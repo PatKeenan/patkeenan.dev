@@ -1,8 +1,7 @@
-import { Button } from '@components/common';
-import { Hero } from '@components/sections';
-import { HomePageContainersType } from './shared.types';
+import { Button, Hero } from '@components/common';
+import { HomePageHeroSectionsType } from './shared.types';
 
-export const Contact = (props: HomePageContainersType) => {
+export const Contact = (props: HomePageHeroSectionsType) => {
     const { id } = props;
     return (
         <Hero
