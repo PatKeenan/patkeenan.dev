@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 import type { ContainerPropTypes } from './Containers';
 
-export type ButtonProps = ContainerPropTypes<'button'> & {
+export type ButtonProps = Omit<ContainerPropTypes<'button'>, 'as'> & {
     href?: string;
     as?: 'icon' | 'button';
 };
