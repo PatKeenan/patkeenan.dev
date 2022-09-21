@@ -1,7 +1,6 @@
-import { HTMLMotionProps, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React from 'react';
 import clsx from 'clsx';
-
 import {
     getStylesFromProps,
     getStylesFromVariant,
@@ -9,15 +8,14 @@ import {
     baseHoverEffects,
     baseTransitionEffects,
 } from '@utils/theme';
-
-import type { ThemePropsWithVariant } from 'types/theme';
 import Link from 'next/link';
 
-export type ButtonProps = Partial<ThemePropsWithVariant> &
-    HTMLMotionProps<'button'> & {
-        href?: string;
-        as?: 'icon' | 'button';
-    };
+import type { ContainerPropTypes } from './Containers';
+
+export type ButtonProps = ContainerPropTypes<'button'> & {
+    href?: string;
+    as?: 'icon' | 'button';
+};
 
 export const Button = (props: ButtonProps) => {
     const {

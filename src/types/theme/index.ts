@@ -8,6 +8,8 @@ import {
     outlineColorOptions,
     paddingOptions,
     ringColorOptions,
+    scrollThumbColorOptions,
+    scrollTrackColorOptions,
     textColorOptions,
 } from '@utils/theme';
 import type { ChildrenProps } from 'types/general';
@@ -22,6 +24,9 @@ export interface ThemeProps {
     ringColor: KeysOf<typeof ringColorOptions>;
     borderColor: KeysOf<typeof borderColorOptions>;
     outlineColor: KeysOf<typeof outlineColorOptions>;
+    scrollTrackColor: KeysOf<typeof scrollTrackColorOptions>;
+    scrollThumbColor: KeysOf<typeof scrollThumbColorOptions>;
+    fullWidth: boolean;
 }
 
 export type ThemePropsWithVariant = Partial<ThemeProps> & {

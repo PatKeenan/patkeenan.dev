@@ -1,10 +1,18 @@
-import { getStylesFromProps, getStylesFromVariant } from '@utils/theme';
+import {
+    getStylesFromProps,
+    getStylesFromVariant,
+    siteWidth,
+} from '@utils/theme';
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
 import type { BaseContainerProps } from 'types/theme';
 import type { HTMLMotionProps } from 'framer-motion';
+import React, { ReactHTML } from 'react';
+
+export type ContainerPropTypes<T extends keyof ReactHTML> = BaseContainerProps &
+    HTMLMotionProps<T>;
 
 export const ElementContainer = ({
     className,
@@ -20,7 +28,10 @@ export const ElementContainer = ({
         borderColor,
         fontSize,
         textColor,
+        fullWidth = true,
         outlineColor,
+        scrollThumbColor,
+        scrollTrackColor,
         ...rest
     } = props;
     const HtmlTag = motion[as];
@@ -30,6 +41,8 @@ export const ElementContainer = ({
         borderColor,
         textColor,
         outlineColor,
+        scrollThumbColor,
+        scrollTrackColor,
     });
 
     return (
@@ -40,16 +53,14 @@ export const ElementContainer = ({
                     variant && getStylesFromVariant(variant, fill),
                     variant && variant !== 'none' && 'border',
                     className,
-                    containerStyles
+                    containerStyles,
+                    !fullWidth && siteWidth
                 )}
             />
         </AnimatePresence>
     );
 };
-
-export const Section = (
-    props: BaseContainerProps & HTMLMotionProps<'section'>
-) => {
+export const Section = (props: ContainerPropTypes<'section'>) => {
     return (
         <ElementContainer
             as="section"
@@ -57,7 +68,7 @@ export const Section = (
         />
     );
 };
-export const Div = (props: BaseContainerProps & HTMLMotionProps<'div'>) => {
+export const Div = (props: ContainerPropTypes<'div'>) => {
     return (
         <ElementContainer
             as="div"
@@ -66,9 +77,7 @@ export const Div = (props: BaseContainerProps & HTMLMotionProps<'div'>) => {
     );
 };
 
-export const Article = (
-    props: BaseContainerProps & HTMLMotionProps<'article'>
-) => {
+export const Article = (props: ContainerPropTypes<'article'>) => {
     return (
         <ElementContainer
             as="article"
@@ -77,7 +86,7 @@ export const Article = (
     );
 };
 
-export const Nav = (props: BaseContainerProps & HTMLMotionProps<'nav'>) => {
+export const Nav = (props: ContainerPropTypes<'nav'>) => {
     return (
         <ElementContainer
             as="nav"
@@ -85,8 +94,9 @@ export const Nav = (props: BaseContainerProps & HTMLMotionProps<'nav'>) => {
         />
     );
 };
+export type NavType = typeof Nav;
 
-export const Ul = (props: BaseContainerProps & HTMLMotionProps<'ul'>) => {
+export const Ul = (props: ContainerPropTypes<'ul'>) => {
     return (
         <ElementContainer
             as="ul"
@@ -94,7 +104,9 @@ export const Ul = (props: BaseContainerProps & HTMLMotionProps<'ul'>) => {
         />
     );
 };
-export const Li = (props: BaseContainerProps & HTMLMotionProps<'li'>) => {
+export type UlType = typeof Ul;
+
+export const Li = (props: ContainerPropTypes<'li'>) => {
     return (
         <ElementContainer
             as="li"
@@ -102,3 +114,4 @@ export const Li = (props: BaseContainerProps & HTMLMotionProps<'li'>) => {
         />
     );
 };
+export type Li = typeof Li;

@@ -24,7 +24,7 @@ export const Navigation = () => {
                 'h-stack w-full justify-between text-sm lg:text-base'
             )}
         >
-            <Link href="#home">
+            <Link href="#">
                 <a>Pat Keenan</a>
             </Link>
             <Ul className="h-stack space-x-4 items-center  hidden lg:flex ">

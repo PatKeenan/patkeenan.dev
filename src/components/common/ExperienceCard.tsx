@@ -1,4 +1,4 @@
-import { Div, Li, Section, Ul } from '@components/common';
+import { ContainerPropTypes, Div, Li, Section, Ul } from '@components/common';
 import Image from 'next/image';
 
 import type { IconType } from 'react-icons';
@@ -10,17 +10,25 @@ export type ExperienceCardProps = {
     dates: string;
     icons?: IconType[];
     responsibilities: string[];
-};
+} & ContainerPropTypes<'section'>;
 
 export const ExperienceCard = (props: ExperienceCardProps) => {
-    const { logoImagePath, title, role, responsibilities, icons, dates } =
-        props;
+    const {
+        logoImagePath,
+        title,
+        role,
+        responsibilities,
+        icons,
+        dates,
+        ...rest
+    } = props;
     return (
         <Section
+            {...rest}
             borderColor="primary"
-            className="text-center w-[325px] md:w-[450px] h-full rounded-md flex-shrink-0 snap-center border-4 py-8"
+            className="text-center w-[90%] md:w-[450px] h-full rounded-md flex-shrink-0 snap-center border-4 py-4 md:py-8 overflow-y-hidden"
         >
-            <div className="h-[100px] w-[100px] mx-auto relative justify-center">
+            <div className="h-[75px] w-[75px] md:h-[100px] md:w-[100px] mx-auto relative justify-center">
                 <Image
                     priority
                     src={logoImagePath}
@@ -31,12 +39,12 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
                     className="rounded-full object-cover"
                 />
             </div>
-            <Div className="v-stack justify-center space-y-2  mt-4">
+            <Div className="v-stack justify-center space-y-1 md:space-y-2  mt-1 md:mt-4">
                 <h4 className="text-xl md:text-3xl font-bold tracking-wide text-light">
                     {title}
                 </h4>
 
-                <Div className="space-y-2\1">
+                <Div className="space-y-2">
                     <div className="h-stack space-x-4 items-center justify-center text-light-accent text-xs md:text-sm">
                         <p className="tracking-wide uppercase">{role}</p>
                         <p className="text-sm text-success font-semibold">
@@ -66,7 +74,7 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
                     {responsibilities.map((item, index) => (
                         <Li
                             key={index}
-                            className="list-item tracking-wide"
+                            className="list-item tracking-wide text-sm md:text-base"
                         >
                             {item}
                         </Li>

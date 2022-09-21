@@ -4,14 +4,28 @@ import type {
     VariantOptionsKeys,
     VariantOptionsType,
 } from 'types/theme';
+
 import type {
     TargetAndTransition,
     Transition,
     VariantLabels,
 } from 'framer-motion';
+
 import clsx from 'clsx';
 
 /** -------- General --------  **/
+export const themeColorsAsHex: VariantOptionsType = {
+    primary: '#67949e',
+    warning: '#d1952e',
+    success: '#54a667',
+    default: '#97999b',
+    danger: '#f44034',
+    light: '#f4f6f6',
+    'light-accent': '#97999b',
+    dark: '#2e343e',
+    transparent: '0',
+    none: 'none',
+};
 
 export const baseVariantsNames = [
     'primary',
@@ -110,6 +124,31 @@ export const textColorOptions: VariantOptionsType = {
     transparent: 'text-transparent',
 };
 
+export const scrollThumbColorOptions: VariantOptionsType = {
+    light: 'scrollbar-thumb-[#f4f6f6]',
+    'light-accent': 'scrollbar-thumb-[#97999b]',
+    primary: 'scrollbar-thumb-[#67949e]',
+    dark: 'scrollbar-thumb-[#2e343e]',
+    default: 'scrollbar-thumb-[#97999b]',
+    success: 'scrollbar-thumb-[#54a667]',
+    warning: 'scrollbar-thumb-[#d1952e]',
+    danger: 'scrollbar-thumb-[#f44034]',
+    none: '',
+    transparent: '',
+};
+export const scrollTrackColorOptions: VariantOptionsType = {
+    light: 'scrollbar-thumb-[#f4f6f6]',
+    'light-accent': 'scrollbar-track-[#97999b]',
+    primary: 'scrollbar-track-[#67949e]',
+    dark: 'scrollbar-track-[#2e343e]',
+    default: 'scrollbar-track-[#97999b]',
+    success: 'scrollbar-track-[#54a667]',
+    warning: 'scrollbar-track-[#d1952e]',
+    danger: 'scrollbar-track-[#f44034]',
+    none: '',
+    transparent: '',
+};
+
 export const marginOptions = {
     primary: 'm-2',
     'primary-x': 'mx-2',
@@ -131,15 +170,27 @@ export const containerOptions = [
 export function getStylesFromProps(
     props: Partial<ThemeProps | ThemePropsWithVariant>
 ) {
-    const { padding, fontSize, textColor, bgColor, outlineColor, borderColor } =
-        props;
+    const {
+        padding,
+        fontSize,
+        textColor,
+        scrollThumbColor,
+        scrollTrackColor,
+        bgColor,
+        outlineColor,
+        borderColor,
+        fullWidth = true,
+    } = props;
     return clsx(
         fontSize && fontSizeOptions[fontSize],
         padding && paddingOptions[padding],
         textColor && textColorOptions[textColor],
         bgColor && bgColorOptions[bgColor],
         outlineColor && outlineColorOptions[outlineColor],
-        borderColor && borderColorOptions[borderColor]
+        borderColor && borderColorOptions[borderColor],
+        scrollThumbColor && scrollThumbColorOptions[scrollThumbColor],
+        scrollTrackColor && scrollTrackColorOptions[scrollTrackColor],
+        !fullWidth && siteWidth
     );
 }
 

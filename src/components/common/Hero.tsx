@@ -23,12 +23,12 @@ export const Hero = (props: HeroProps) => {
     } = props;
     return (
         <Section
-            className="hero snap-center relative w-full px-4 v-stack space-y-6 "
+            className="hero snap-center relative w-full px-4 v-stack space-y-3 md:space-y-6 "
             id={id}
             {...rest}
         >
             {sectionTitle && (
-                <h2 className="tracking-widest font-bold flex-shrink-0 mt-24">
+                <h2 className="tracking-widest font-bold flex-shrink-0 md:mt-24 mt-16 text-2xl md:text-[2.618rem]">
                     {sectionTitle}
                 </h2>
             )}
