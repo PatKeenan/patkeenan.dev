@@ -23,20 +23,20 @@ export const Hero = (props: HeroProps) => {
     } = props;
     return (
         <Section
-            className="hero snap-center relative w-full px-4 v-stack space-y-3 md:space-y-6 "
+            className="hero md:space-y-6"
             id={id}
             {...rest}
         >
             {sectionTitle && (
-                <h2 className="tracking-widest font-bold flex-shrink-0 md:mt-24 mt-16 text-2xl md:text-[2.618rem]">
+                <h2 className="tracking-widest font-bold flex-shrink-0 md:mt-24 text-2xl md:text-[2.618rem] mt-16 text-center">
                     {sectionTitle}
                 </h2>
             )}
             <div
                 className={clsx(
                     maxWidth ? siteWidth : 'w-full',
-                    'relative z-0',
-                    'h-[calc(100%-400px)] flex-grow v-stack',
+                    'relative flex-1 v-stack h-full justify-center',
+
                     overflow ? 'overflow-auto' : 'overflow-hidden'
                 )}
             >

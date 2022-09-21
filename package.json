@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier ./src -c",
+    "format": "prettier ./src -w",
     "commit": "cz",
     "prepare": "husky install"
   },

@@ -1,5 +1,6 @@
 import { Favicons } from '@components/other';
 import { Div } from '@components/common';
+import * as React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import {
@@ -21,6 +22,30 @@ const Home: NextPageExtended = () => {
                     name="description"
                     content=""
                 />
+                <meta
+                    name="viewport"
+                    content="width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no"
+                />
+
+                <meta
+                    name="theme-color"
+                    content="#2e343e"
+                />
+
+                <meta
+                    name="apple-mobile-web-app-capable"
+                    content="yes"
+                />
+
+                <meta
+                    name="apple-mobile-web-app-status-bar-style"
+                    content="black"
+                />
+                <meta
+                    name="mobile-web-app-capable"
+                    content="yes"
+                />
+
                 <Favicons />
             </Head>
 

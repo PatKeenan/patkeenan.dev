@@ -13,11 +13,16 @@
         --warning: 38 64% 50%;
         --danger: 4 90% 58%;
     }
-    body {
-        font-size: 16px;
+
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    html {
+        @apply snap-y snap-mandatory h-full block;
     }
     body {
-        @apply bg-dark;
+        @apply bg-dark w-full text-[16px] min-h-full scroll-smooth overflow-y-scroll snap-y snap-mandatory scrollbar-thumb-[#67949e] scrollbar-thin;
     }
     h1 {
         @apply text-[4.236rem];
@@ -31,14 +36,11 @@
     a {
         @apply hover:text-primary transition-colors duration-75 ease-in;
     }
-    body {
-        @apply scroll-smooth;
-    }
 }
 
 @layer components {
     .hero {
-        @apply v-stack h-screen min-h-screen overflow-hidden justify-center align-middle items-center;
+        @apply v-stack h-screen overflow-hidden snap-start relative w-full px-4;
     }
     .h-stack {
         @apply flex flex-row;

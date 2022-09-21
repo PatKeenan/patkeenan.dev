@@ -14,12 +14,7 @@ import React, { ReactHTML } from 'react';
 export type ContainerPropTypes<T extends keyof ReactHTML> = BaseContainerProps &
     HTMLMotionProps<T>;
 
-export const ElementContainer = ({
-    className,
-    ...props
-}: BaseContainerProps & {
-    className?: string;
-}) => {
+export const ElementContainer = (props: BaseContainerProps) => {
     const {
         as = 'div',
         variant,
@@ -28,6 +23,7 @@ export const ElementContainer = ({
         borderColor,
         fontSize,
         textColor,
+        className,
         fullWidth = true,
         outlineColor,
         scrollThumbColor,
@@ -49,13 +45,15 @@ export const ElementContainer = ({
         <AnimatePresence>
             <HtmlTag
                 {...rest}
-                className={clsx(
-                    variant && getStylesFromVariant(variant, fill),
-                    variant && variant !== 'none' && 'border',
-                    className,
-                    containerStyles,
-                    !fullWidth && siteWidth
-                )}
+                className={
+                    clsx(
+                        variant && getStylesFromVariant(variant, fill),
+                        variant && variant !== 'none' && 'border',
+                        className,
+                        containerStyles,
+                        !fullWidth && siteWidth
+                    ) || undefined
+                }
             />
         </AnimatePresence>
     );
@@ -64,6 +62,22 @@ export const Section = (props: ContainerPropTypes<'section'>) => {
     return (
         <ElementContainer
             as="section"
+            {...props}
+        />
+    );
+};
+export const Header = (props: ContainerPropTypes<'header'>) => {
+    return (
+        <ElementContainer
+            as="header"
+            {...props}
+        />
+    );
+};
+export const Main = (props: ContainerPropTypes<'main'>) => {
+    return (
+        <ElementContainer
+            as="main"
             {...props}
         />
     );

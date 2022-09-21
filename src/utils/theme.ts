@@ -163,6 +163,8 @@ export const containerOptions = [
     'nav',
     'ul',
     'li',
+    'header',
+    'main',
 ] as const;
 
 /** -------- Utilities --------  **/

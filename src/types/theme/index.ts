@@ -51,4 +51,5 @@ export type ContainerOptionsType = {
 
 export type BaseContainerProps = BasePropsWithThemeAndVariant & {
     as?: KeysOf<ContainerOptionsType>;
+    className?: string;
 };
