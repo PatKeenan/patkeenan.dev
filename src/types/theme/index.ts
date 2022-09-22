@@ -46,7 +46,7 @@ export type BasePropsWithThemeAndVariant = Partial<ThemePropsWithVariant> &
     ChildrenProps;
 
 export type ContainerOptionsType = {
-[Property in typeof containerOptions[number]]: string;
+    [Property in typeof containerOptions[number]]: string;
 };
 
 export type BaseContainerProps = BasePropsWithThemeAndVariant & {

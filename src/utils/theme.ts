@@ -166,7 +166,7 @@ export const containerOptions = [
     'header',
     'main',
     'footer',
-    'figure'
+    'figure',
 ] as const;
 
 /** -------- Utilities --------  **/
@@ -194,7 +194,7 @@ export function getStylesFromProps(
         borderColor && borderColorOptions[borderColor],
         scrollThumbColor && scrollThumbColorOptions[scrollThumbColor],
         scrollTrackColor && scrollTrackColorOptions[scrollTrackColor],
-        !fullWidth && siteWidth,
+        !fullWidth && siteWidth
     );
 }
 
