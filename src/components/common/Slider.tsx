@@ -22,7 +22,7 @@ export const Slider = (props: SliderPropsType) => {
                 className,
                 snap && 'snap-x snap-mandatory',
                 scrollThumbColor && scrollThumbColorOptions[scrollThumbColor],
-                'h-stack w-full overflow-x-scroll space-x-5 scrollbar-thin mx-auto'
+                'h-stack overflow-x-scroll scrollbar-thin'
             )}
             {...rest}
         />

@@ -19,10 +19,10 @@
     }
 
     html {
-        @apply snap-y snap-mandatory h-full block;
+        @apply h-full block;
     }
     body {
-        @apply bg-dark w-full text-[16px] min-h-full scroll-smooth overflow-y-scroll snap-y snap-mandatory scrollbar-thumb-[#67949e] scrollbar-thin;
+        @apply bg-dark w-full text-[16px] min-h-full scroll-smooth overflow-y-scroll scrollbar-thumb-[#67949e] scrollbar-thin;
     }
     h1 {
         @apply text-[4.236rem];
@@ -40,7 +40,7 @@
 
 @layer components {
     .hero {
-        @apply v-stack h-screen overflow-hidden snap-start relative w-full px-4;
+        @apply v-stack h-screen min-h-screen relative w-full px-4;
     }
     .h-stack {
         @apply flex flex-row;

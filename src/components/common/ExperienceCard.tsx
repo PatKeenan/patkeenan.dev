@@ -1,4 +1,12 @@
-import { ContainerPropTypes, Div, Li, Section, Ul } from '@components/common';
+import {
+    Article,
+    ContainerPropTypes,
+    Div,
+    Figure,
+    Header,
+    Li,
+    Ul,
+} from '@components/common';
 import Image from 'next/image';
 
 import type { IconType } from 'react-icons';
@@ -23,28 +31,28 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
         ...rest
     } = props;
     return (
-        <Section
+        <Article
             {...rest}
             borderColor="primary"
-            className="text-center w-[90%] md:w-[450px] h-full rounded-md flex-shrink-0 snap-center border-4 py-4 md:py-8 overflow-y-hidden"
+            className="text-center v-stack w-[90%] md:w-[450px] space-y-2 flex-grow rounded-md flex-shrink-0 snap-center border-4 py-4 md:py-8 overflow-y-hidden"
         >
-            <div className="h-[75px] w-[75px] md:h-[100px] md:w-[100px] mx-auto relative justify-center">
-                <Image
-                    priority
-                    src={logoImagePath}
-                    alt="Patrick Keenan"
-                    height={100}
-                    width={100}
-                    layout="responsive"
-                    className="rounded-full object-cover"
-                />
-            </div>
-            <Div className="v-stack justify-center space-y-1 md:space-y-2  mt-1 md:mt-4">
-                <h4 className="text-xl md:text-3xl font-bold tracking-wide text-light">
-                    {title}
-                </h4>
+            <Header>
+                <Figure className="h-[75px] w-[75px] md:h-[100px] md:w-[100px] mx-auto relative justify-center">
+                    <Image
+                        priority
+                        src={logoImagePath}
+                        alt="Patrick Keenan"
+                        height={100}
+                        width={100}
+                        layout="responsive"
+                        className="rounded-full object-cover"
+                    />
+                </Figure>
+                <Div className="v-stack justify-center space-y-1 md:space-y-2  mt-1 md:mt-4">
+                    <h4 className="text-xl md:text-3xl font-bold tracking-wide text-light">
+                        {title}
+                    </h4>
 
-                <Div className="space-y-2">
                     <div className="h-stack space-x-4 items-center justify-center text-light-accent text-xs md:text-sm">
                         <p className="tracking-wide uppercase">{role}</p>
                         <p className="text-sm text-success font-semibold">
@@ -69,18 +77,17 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
                         </Ul>
                     </Div>
                 </Div>
-
-                <Ul className="text-left list-disc px-6 space-y-2">
-                    {responsibilities.map((item, index) => (
-                        <Li
-                            key={index}
-                            className="list-item tracking-wide text-sm md:text-base"
-                        >
-                            {item}
-                        </Li>
-                    ))}
-                </Ul>
-            </Div>
-        </Section>
+            </Header>
+            <Ul className="text-left list-disc px-6 space-y-2">
+                {responsibilities.map((item, index) => (
+                    <Li
+                        key={index}
+                        className="list-item tracking-wide text-sm md:text-base"
+                    >
+                        {item}
+                    </Li>
+                ))}
+            </Ul>
+        </Article>
     );
 };

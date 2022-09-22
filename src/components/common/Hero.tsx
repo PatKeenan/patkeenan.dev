@@ -9,7 +9,8 @@ type HeroProps = BaseContainerProps & {
     sectionTitle?: string;
     id?: string;
     maxWidth?: boolean;
-    overflow?: boolean;
+    centeredContent?: boolean;
+    snap?: boolean;
 };
 
 export const Hero = (props: HeroProps) => {
@@ -17,13 +18,14 @@ export const Hero = (props: HeroProps) => {
         children,
         sectionTitle,
         id,
+        centeredContent = true,
         maxWidth = false,
-        overflow = false,
+        snap = true,
         ...rest
     } = props;
     return (
         <Section
-            className="hero md:space-y-6"
+            className={clsx(snap && 'snap-start', 'hero md:space-y-6')}
             id={id}
             {...rest}
         >
@@ -35,9 +37,8 @@ export const Hero = (props: HeroProps) => {
             <div
                 className={clsx(
                     maxWidth ? siteWidth : 'w-full',
-                    'relative flex-1 v-stack h-full justify-center',
-
-                    overflow ? 'overflow-auto' : 'overflow-hidden'
+                    centeredContent && 'justify-center',
+                    'relative flex-1 v-stack h-full flex-shrink-0'
                 )}
             >
                 {children}

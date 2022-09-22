@@ -54,9 +54,9 @@ export const fontSizeOptions = {
 };
 
 export const paddingOptions = {
-    primary: 'p-2',
-    'primary-x': 'px-2',
-    'primary-y': 'py-2',
+    primary: 'p-4',
+    'primary-x': 'px-4',
+    'primary-y': 'py-4',
 };
 
 export const bgColorOptions: VariantOptionsType = {
@@ -165,6 +165,8 @@ export const containerOptions = [
     'li',
     'header',
     'main',
+    'footer',
+    'figure'
 ] as const;
 
 /** -------- Utilities --------  **/
@@ -192,7 +194,7 @@ export function getStylesFromProps(
         borderColor && borderColorOptions[borderColor],
         scrollThumbColor && scrollThumbColorOptions[scrollThumbColor],
         scrollTrackColor && scrollTrackColorOptions[scrollTrackColor],
-        !fullWidth && siteWidth
+        !fullWidth && siteWidth,
     );
 }
 

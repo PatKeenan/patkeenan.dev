@@ -15,7 +15,7 @@ export const Experience = (props: HomePageHeroSectionsType) => {
         >
             <Slider
                 snap
-                className="h-[95%] md:h-[70vh] pb-6 space-x-5"
+                className="h-full pb-6 space-x-5 mb-8 mt-4 w-full"
                 scrollThumbColor="primary"
             >
                 {experienceData.map((data, index) => (

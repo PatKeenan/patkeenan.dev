@@ -27,6 +27,7 @@ export const ElementContainer = (props: BaseContainerProps) => {
         fullWidth = true,
         outlineColor,
         scrollThumbColor,
+        padding,
         scrollTrackColor,
         ...rest
     } = props;
@@ -37,6 +38,7 @@ export const ElementContainer = (props: BaseContainerProps) => {
         borderColor,
         textColor,
         outlineColor,
+        padding,
         scrollThumbColor,
         scrollTrackColor,
     });
@@ -82,6 +84,14 @@ export const Main = (props: ContainerPropTypes<'main'>) => {
         />
     );
 };
+export const Figure = (props: ContainerPropTypes<'figure'>) => {
+    return (
+        <ElementContainer
+            as="figure"
+            {...props}
+        />
+    );
+};
 export const Div = (props: ContainerPropTypes<'div'>) => {
     return (
         <ElementContainer
@@ -95,6 +105,14 @@ export const Article = (props: ContainerPropTypes<'article'>) => {
     return (
         <ElementContainer
             as="article"
+            {...props}
+        />
+    );
+};
+export const Footer = (props: ContainerPropTypes<'footer'>) => {
+    return (
+        <ElementContainer
+            as="footer"
             {...props}
         />
     );
