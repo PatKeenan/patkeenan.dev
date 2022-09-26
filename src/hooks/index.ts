@@ -1,2 +1,2 @@
 export * from './useClickAway';
-export * from './useIsInViewport'
+export * from './useIsInViewport';
