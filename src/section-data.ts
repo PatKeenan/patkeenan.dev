@@ -1,5 +1,17 @@
 import { FaAws, FaDocker, FaPhp, FaPython, FaReact } from 'react-icons/fa';
-import { SiChakraui, SiCypress, SiGit, SiGraphql, SiMaterialui, SiNextdotjs, SiPostgresql, SiPrisma, SiStripe, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import {
+    SiChakraui,
+    SiCypress,
+    SiGit,
+    SiGraphql,
+    SiMaterialui,
+    SiNextdotjs,
+    SiPostgresql,
+    SiPrisma,
+    SiStripe,
+    SiTailwindcss,
+    SiTypescript,
+} from 'react-icons/si';
 
 import type { ExperienceCardProps } from '@components/common';
 
@@ -43,22 +55,20 @@ export const experienceData: ExperienceCardProps[] = [
     },
 ];
 
-
-
 export const skillsData = [
-    {title: 'Nextjs', icon: SiNextdotjs, level: '85%'},
-    {title: 'React', icon: FaReact, level: '80%'},
-    {title: 'Typescript', icon: SiTypescript, level: '80%'},
-    {title: 'Docker', icon: FaDocker, level: '70%'},
-    {title: 'Prisma', icon: SiPrisma, level: '70%'},
-    {title: 'Python', icon: FaPython, level: '60%'},
-    {title: 'Cypress', icon: SiCypress, level: '40%'},
-    {title: 'Stripe', icon: SiStripe, level: '35%'},
-    {title: 'Aws', icon: FaAws, level: '40%'},
-    {title: 'Graphql', icon: SiGraphql, level: '50%'},
-    {title: 'Postgres', icon: SiPostgresql, level: '40%'},
-    {title: 'Chakra-ui', icon: SiChakraui, level: '60%'},
-    {title: 'Material-ui', icon: SiMaterialui, level: '60%'},
-    {title: 'Tailwindcss', icon: SiTailwindcss, level: '85%'},
-    {title: 'Git', icon: SiGit, level: '80%'},
-]
+    { title: 'Nextjs', icon: SiNextdotjs, level: '85%' },
+    { title: 'React', icon: FaReact, level: '80%' },
+    { title: 'Typescript', icon: SiTypescript, level: '80%' },
+    { title: 'Docker', icon: FaDocker, level: '70%' },
+    { title: 'Prisma', icon: SiPrisma, level: '70%' },
+    { title: 'Python', icon: FaPython, level: '60%' },
+    { title: 'Cypress', icon: SiCypress, level: '40%' },
+    { title: 'Stripe', icon: SiStripe, level: '35%' },
+    { title: 'Aws', icon: FaAws, level: '40%' },
+    { title: 'Graphql', icon: SiGraphql, level: '50%' },
+    { title: 'Postgres', icon: SiPostgresql, level: '40%' },
+    { title: 'Chakra-ui', icon: SiChakraui, level: '60%' },
+    { title: 'Material-ui', icon: SiMaterialui, level: '60%' },
+    { title: 'Tailwindcss', icon: SiTailwindcss, level: '85%' },
+    { title: 'Git', icon: SiGit, level: '80%' },
+];
