@@ -3,19 +3,24 @@ import { RiMenu5Fill } from 'react-icons/ri';
 import { IoMdClose } from 'react-icons/io';
 import { siteWidth } from '@utils/theme';
 import { useClickAway } from '@hooks';
+import { useStore } from '@store';
 import Link from 'next/link';
 import React from 'react';
 import clsx from 'clsx';
 
-export const Navigation = () => {
-    const navItems = [
-        { title: 'Experience', href: '#experience' },
-        { title: 'Projects', href: '#projects' },
-        { title: 'Skills', href: '#skills' },
-        { title: 'Contact', href: '#contact' },
-    ];
+const navItems = [
+    { title: 'Experience', href: '#experience' },
+    { title: 'Projects', href: '#projects' },
+    { title: 'Skills', href: '#skills' },
+    { title: 'Contact', href: '#contact' },
+] as const;
 
+const navItemKeys = navItems.flatMap((i) => i.title);
+export type NavigationKeys = typeof navItemKeys[number];
+
+export const Navigation = () => {
     const { ref: NavContainerRef, handleToggle, active } = useClickAway();
+    const { activeSection } = useStore();
 
     return (
         <Nav
@@ -25,9 +30,11 @@ export const Navigation = () => {
             )}
         >
             <Link href="#">
-                <a>Pat Keenan</a>
+                <a className={clsx(activeSection == 'Home' && 'text-primary')}>
+                    Pat Keenan
+                </a>
             </Link>
-            <Ul className="h-stack space-x-4 items-center  hidden lg:flex ">
+            <Ul className="h-stack space-x-4 items-center hidden lg:flex ">
                 {navItems.map((item, index) => (
                     <Li
                         key={index}
@@ -35,7 +42,14 @@ export const Navigation = () => {
                         onMouseDown={() => handleToggle}
                     >
                         <Link href={`/${item.href}`}>
-                            <a>{item.title}</a>
+                            <a
+                                className={clsx(
+                                    activeSection == item.title &&
+                                        'text-primary'
+                                )}
+                            >
+                                {item.title}
+                            </a>
                         </Link>
                     </Li>
                 ))}
