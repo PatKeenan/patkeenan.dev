@@ -40,7 +40,7 @@
 
 @layer components {
     .hero {
-        @apply v-stack h-screen min-h-screen relative w-full px-4;
+        @apply v-stack min-h-screen relative w-full px-4;
     }
     .h-stack {
         @apply flex flex-row;

@@ -1,11 +1,15 @@
-import { Button, Hero } from '@components/common';
-import type { HomePageHeroSectionsType } from './shared.types';
-import * as React from 'react';
+import { Hero, SkillCard } from '@components/common';
 import { useIsInViewport } from '@hooks';
+import { skillsData } from 'section-data';
 import { useStore } from '@store';
+import * as React from 'react';
+
+import type { HomePageHeroSectionsType } from './shared.types';
+
 export const Skills = (props: HomePageHeroSectionsType) => {
     const { id } = props;
     const sectionRef = React.useRef<HTMLDivElement | null>(null);
+
     const isInViewport = useIsInViewport(sectionRef);
     const { setActiveSection } = useStore();
 
@@ -15,7 +19,6 @@ export const Skills = (props: HomePageHeroSectionsType) => {
         }
     }, [isInViewport, setActiveSection]);
 
-    const reactskillPercent = '80%';
     return (
         <Hero
             id={id}
@@ -23,65 +26,21 @@ export const Skills = (props: HomePageHeroSectionsType) => {
             variant="dark"
         >
             <div ref={sectionRef}>
-                <div>
-                    <div>React</div>
-                    <div className="h-stack space-x-2 group">
-                        <div className="w-24 h-2 rounded-lg  bg-light-accent/40 relative flex align-middle">
-                            <div
-                                className={`h-2 rounded-lg bg-primary absolute left-0 w-[${reactskillPercent}] group-hover:bg-green-400 align-middle  justify-end flex`}
-                            ></div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>NextJs</div>
-                    <div className="h-stack space-x-2 group">
-                        <div className="w-24 h-2 rounded-lg  bg-light-accent/40 relative flex align-middle">
-                            <div
-                                className={`h-2 rounded-lg bg-primary absolute left-0 w-[${reactskillPercent}] group-hover:bg-green-400 align-middle  justify-end flex`}
-                            ></div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>Golang</div>
-                    <div className="h-stack space-x-2 group">
-                        <div className="w-24 h-2 rounded-lg  bg-light-accent/40 relative flex align-middle">
-                            <div
-                                className={`h-2 rounded-lg bg-primary absolute left-0 w-[20%] group-hover:bg-green-400 align-middle  justify-end flex`}
-                            ></div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>Rust</div>
-                    <div className="h-stack space-x-2 group">
-                        <div className="w-24 h-2 rounded-lg  bg-light-accent/40 relative flex align-middle">
-                            <div
-                                className={`h-2 rounded-lg bg-primary absolute left-0 w-[20%] group-hover:bg-green-400 align-middle  justify-end flex`}
-                            ></div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>Luna</div>
-                    <div className="h-stack space-x-2 group">
-                        <div className="w-24 h-2 rounded-lg  bg-light-accent/40 relative flex align-middle">
-                            <div
-                                className={`h-2 rounded-lg bg-primary absolute left-0 w-[20%] group-hover:bg-green-400 align-middle  justify-end flex`}
-                            ></div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>PHP</div>
-                    <div className="h-stack space-x-2 group">
-                        <div className="w-24 h-2 rounded-lg  bg-light-accent/40 relative flex align-middle">
-                            <div
-                                className={`h-2 rounded-lg bg-primary absolute left-0 w-[20%] group-hover:bg-green-400 align-middle  justify-end flex`}
-                            ></div>
-                        </div>
-                    </div>
+                <div className="grid grid-cols-3 lg:grid-cols-4 max-w-4xl mx-auto gap-6 md:gap-8">
+                    {skillsData.map((skill, index) => (
+                        <SkillCard
+                            key={index}
+                            title={skill.title}
+                            icon={skill.icon}
+                            level={skill.level}
+                            animate={{
+                                width: isInViewport ? skill.level : '0',
+                            }}
+                            transition={{
+                                delay: Math.random() / 2,
+                            }}
+                        />
+                    ))}
                 </div>
             </div>
         </Hero>

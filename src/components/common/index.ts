@@ -6,3 +6,4 @@ export * from './Navigation';
 export * from './ProjectCard';
 export * from './SocialIcons';
 export * from './Slider';
+export * from './SkillCard'

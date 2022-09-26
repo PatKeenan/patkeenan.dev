@@ -1,7 +1,7 @@
 import { ExperienceCard, Hero, Slider } from '@components/common';
 import { useIsInViewport } from '@hooks';
 import { useStore } from '@store';
-import { experienceData } from 'experience-data';
+import { experienceData } from 'section-data';
 import * as React from 'react';
 import type { HomePageHeroSectionsType } from './shared.types';
 
