@@ -63,7 +63,7 @@ export const ProjectCard = (
                 </Figure>
                 <Article className="text-center lg:text-left w-full lg:w-1/2 justify-center v-stack space-y-4 mx-auto max-w-prose">
                     <Header>
-                        <h3 className="tracking-wider text-3xl font-semibold">
+                        <h3 className="tracking-wider text-2xl md:text-3xl font-semibold">
                             {title}
                         </h3>
                     </Header>

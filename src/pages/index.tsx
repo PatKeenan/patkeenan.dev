@@ -1,8 +1,6 @@
 import { Favicons } from '@components/other';
-import { Div } from '@components/common';
 import * as React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import {
     Introduction,
     Experience,
@@ -10,6 +8,7 @@ import {
     Skills,
     Contact,
 } from '@components/sections';
+import 'react-toastify/dist/ReactToastify.css';
 
 import type { NextPageExtended } from 'types/general';
 

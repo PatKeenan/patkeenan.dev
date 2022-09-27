@@ -13,7 +13,7 @@ type SkillCardProps = {
 export const SkillCard = (props: SkillCardProps) => {
     const { title, icon: Icon, level, transition, className, ...rest } = props;
     return (
-        <Div className="v-stack justify-center w-24 md:w-40 text-center text-xl group cursor-default mx-auto space-y-2">
+        <Div className="v-stack justify-center w-24 md:w-40 text-center text-xl group cursor-default mx-auto space-y-2 my-2 md:my-0">
             <Icon className="w-8 h-8 md:w-12:d md:h-12 mx-auto text-light-accent group-hover:text-light" />
             <div>{title}</div>
             <div className="h-stack space-x-2 w-full">
