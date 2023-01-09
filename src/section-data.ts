@@ -33,7 +33,7 @@ export const experienceData: ExperienceCardProps[] = [
     },
     {
         title: 'Heritage House S.I.R',
-        dates: 'April 2020 - May 2021',
+        dates: 'May 2020 - November 2022',
         role: 'Sales Associate',
         logoImagePath: '/experience-images/sir-logo.jpeg',
         icons: [FaReact, FaPython, SiNextdotjs],
@@ -47,11 +47,11 @@ export const experienceData: ExperienceCardProps[] = [
     },
     {
         title: 'Revamp Wraps',
-        dates: 'June 2016 - April 2020',
+        dates: 'September 2017 - May 2020',
         role: 'Vice President',
         logoImagePath: '/experience-images/revamp-wraps-logo.jpeg',
         icons: [FaReact, FaPython],
-        responsibilities: ['Google Analytics'],
+        responsibilities: ['Google Analytics', 'Managed timelines with clients and vendors'],
     },
 ];
 
@@ -82,8 +82,7 @@ export const projectsData = [
         shortDescription:
             'Software created for real estate agents. This application helps agents stay organized when creating and maintaining appointments for clients by providing a intuitive interface.',
         projectUrl: 'https://real-estate-app-three-pi.vercel.app/',
-        longDescription: `This project was created while I was working as a real estate agent after noticing a serious need
-        f`,
+       
     },
     {
         id: 2,
@@ -93,7 +92,7 @@ export const projectsData = [
         shortDescription:
             'A blogging platform where users start with a plot and build a full story using a voting system. Users can submit blocks for each part of the story. The block with the most votes slides into that part of the story.',
         githubUrl: 'https://github.com/PatKeenan/improvBlog',
-        longDescription: '',
+      
     },
     {
         id: 3,
@@ -104,6 +103,6 @@ export const projectsData = [
             'A blogging platform where users start with a plot and build a full story using a voting system. Users can submit blocks for each part of the story. The block with the most votes slides into that part of the story.',
         githubUrl: 'https://github.com/PatKeenan/patkeenan.dev',
         projectUrl: 'https://pat-keenan.vercel.app/',
-        longDescription: '',
+       
     },
 ];

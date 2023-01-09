@@ -29,7 +29,7 @@ export const Navigation = () => {
                 'h-stack w-full justify-between text-sm lg:text-base'
             )}
         >
-            <Link href="#">
+            <Link href="/">
                 <a className={clsx(activeSection == 'Home' && 'text-primary')}>
                     Pat Keenan
                 </a>

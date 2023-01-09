@@ -34,7 +34,7 @@
         @apply text-[1.618rem];
     }
     a {
-        @apply hover:text-primary transition-colors duration-75 ease-in;
+        @apply hover:text-white transition-colors duration-75 ease-in;
     }
 }
 
