@@ -7,4 +7,4 @@ export * from './ProjectCard';
 export * from './SocialIcons';
 export * from './Slider';
 export * from './SkillCard';
-export * from './IconLink'
+export * from './IconLink';

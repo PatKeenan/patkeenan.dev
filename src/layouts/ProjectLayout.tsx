@@ -35,7 +35,7 @@ export const ProjectLayout = ({
                         width={500}
                     />
                 </div>
-                <div className="block">
+                <div className="block mt-4">
                     <h2 className="text-4xl text-white">{project.title}</h2>
                     <p className="text-sm text-gray-400 tracking-wide mt-2">
                         {project.shortDescription}

@@ -40,33 +40,23 @@ const ReAppContainer = () => {
                     <p>
                         The tech stack I chose for this application is known as
                         the T3 stack. The T3 stack is my go to choice for
-                        creating full stack applications. T3 comes preloaded
+                        creating full stack applications. T3 comes pre-loaded
                         with the following technologies:
                     </p>
-                    <ul className=" list-disc max-w-lg mx-left ml-12 mt-4">
-                        <li className="list-item">Typescript</li>
-                        <li className="list-item">NextJS</li>
-                        <li className="list-item">
-                            <span className="font-medium">tRPC</span> - end to
-                            end type safety
-                        </li>
-                        <li className="list-item">
-                            Arranging appointments based on the proximity to
-                            others.
-                        </li>
-                        <li className="list-item">
-                            Associating client notes/feedback with the
-                            appointment in pertains to.
-                        </li>
-                        <li className="list-item">
-                            Tracking which vendors/agents have joined you on
-                            appointments.
-                        </li>
-                        <li className="list-item">
-                            Tracking the status of appointments across multiple
-                            clients.
-                        </li>
+                    <ul className=" list-disc max-w-lg mx-left ml-12 mt-4 medium">
+                        <li>Typescript</li>
+                        <li>NextJS</li>
+                        <li>tRPC</li>
+                        <li>Prisma</li>
+                        <li>NextAuth</li>
+                        <li>ReactQuery</li>
+                        <li>Tailwindcss</li>
                     </ul>
+                    <p className="mt-4">
+                        I further configured the project with my own personal
+                        favorite packages including, Husky for commit hooks,
+                        prettier/eslint, hericons, and headlessui.
+                    </p>
                 </div>
             </section>
         </ProjectLayout>
