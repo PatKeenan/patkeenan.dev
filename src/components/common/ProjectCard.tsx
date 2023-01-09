@@ -71,13 +71,12 @@ export const ProjectCard = (
                         <p>{description}</p>
                     </Div>
                     <Footer>
-                        <Link href={`/projects/${href}`}>
-                            <Button
-                                variant={variant == 'dark' ? 'primary' : 'dark'}
-                            >
-                                View Project
-                            </Button>
-                        </Link>
+                        <Button
+                            variant={variant == 'dark' ? 'primary' : 'dark'}
+                            href={`${href}`}
+                        >
+                            Learn More
+                        </Button>
                     </Footer>
                 </Article>
             </Div>

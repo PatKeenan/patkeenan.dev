@@ -2,6 +2,7 @@ import { Hero, ProjectCard } from '@components/common';
 import { useStore } from '@store';
 import { useIsInViewport } from 'hooks/useIsInViewport';
 import * as React from 'react';
+import { projectsData } from 'section-data';
 
 import type { HomePageHeroSectionsType } from './shared.types';
 
@@ -27,25 +28,16 @@ export const Projects = (props: HomePageHeroSectionsType) => {
         >
             <div ref={sectionRef2}>
                 <div className="v-stack space-y-2 mt-4">
-                    <ProjectCard
-                        title="Real Estate App"
-                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae eum dolorem. Voluptate praesentium quisquam, quod omnis illo ab cum, minima ipsam possimus error vero dolore tempora dolor qui rem!"
-                        imagePath="/project-images/placeholder.png"
-                        href="#"
-                    />
-                    <ProjectCard
-                        reverse
-                        title="Real Estate App"
-                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae eum dolorem. Voluptate praesentium quisquam, quod omnis illo ab cum, minima ipsam possimus error vero dolore tempora dolor qui rem!"
-                        imagePath="/project-images/placeholder.png"
-                        href="#"
-                    />
-                    <ProjectCard
-                        title="Real Estate App"
-                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae eum dolorem. Voluptate praesentium quisquam, quod omnis illo ab cum, minima ipsam possimus error vero dolore tempora dolor qui rem!"
-                        imagePath="/project-images/placeholder.png"
-                        href="#"
-                    />
+                    {projectsData.map((project, idx) => (
+                        <ProjectCard
+                            key={idx}
+                            title={project.title}
+                            description={project.shortDescription}
+                            imagePath={project.photo}
+                            href={`/projects/${project.slug}`}
+                            reverse={idx % 2 !== 0 ? true : false}
+                        />
+                    ))}
                 </div>
             </div>
         </Hero>

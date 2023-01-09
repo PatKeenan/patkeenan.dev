@@ -72,3 +72,36 @@ export const skillsData = [
     { title: 'Tailwindcss', icon: SiTailwindcss, level: '85%' },
     { title: 'Git', icon: SiGit, level: '80%' },
 ];
+
+
+export const projectsData = [
+    {
+        id: 1, 
+        title: 'Real Estate App',
+        slug: "re-app",
+        photo: '/project-images/re-app-desktop.png',
+        shortDescription: "Software created for real estate agents. This application helps agents stay organized when creating and maintaining appointments for clients by providing a intuitive interface.",
+        projectUrl: 'https://real-estate-app-three-pi.vercel.app/',
+        longDescription: `This project was created while I was working as a real estate agent after noticing a serious need
+        f`
+    },
+    {
+        id: 2,
+        title: 'Improv Blog',
+        slug: "improv-blog",
+        photo: '/project-images/improv-app-desktop.png',
+        shortDescription: "A blogging platform where users start with a plot and build a full story using a voting system. Users can submit blocks for each part of the story. The block with the most votes slides into that part of the story.",
+        githubUrl:'https://github.com/PatKeenan/improvBlog',
+        longDescription: ''
+    },
+    {
+        id: 3,
+        title: 'Portfolio Site',
+        slug: 'portfolio-site',
+        photo: '/project-images/portfolio-site.png',
+        shortDescription: "A blogging platform where users start with a plot and build a full story using a voting system. Users can submit blocks for each part of the story. The block with the most votes slides into that part of the story.",
+        githubUrl:'https://github.com/PatKeenan/patkeenan.dev',
+        projectUrl:'https://pat-keenan.vercel.app/',
+        longDescription:""
+    }
+]
