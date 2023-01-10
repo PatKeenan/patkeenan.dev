@@ -34,7 +34,7 @@ export const ExperienceCard = (props: ExperienceCardProps) => {
         <Article
             {...rest}
             borderColor="primary"
-            className="text-center v-stack w-[90%] md:w-[450px] space-y-2 flex-grow rounded-md flex-shrink-0 snap-center border-4 py-4 md:py-8 overflow-y-hidden"
+            className="mx-auto text-center v-stack w-[90%] md:w-[450px] space-y-2 flex-grow rounded-md flex-shrink-0 snap-center border-4 py-4 md:py-8 overflow-y-hidden my-5 md:my-0 "
         >
             <Header>
                 <Figure className="h-[75px] w-[75px] md:h-[100px] md:w-[100px] mx-auto relative justify-center">

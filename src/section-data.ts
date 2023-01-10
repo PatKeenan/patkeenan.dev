@@ -51,7 +51,10 @@ export const experienceData: ExperienceCardProps[] = [
         role: 'Vice President',
         logoImagePath: '/experience-images/revamp-wraps-logo.jpeg',
         icons: [FaReact, FaPython],
-        responsibilities: ['Google Analytics', 'Managed timelines with clients and vendors'],
+        responsibilities: [
+            'Google Analytics',
+            'Managed timelines with clients and vendors',
+        ],
     },
 ];
 
@@ -82,7 +85,6 @@ export const projectsData = [
         shortDescription:
             'Software created for real estate agents. This application helps agents stay organized when creating and maintaining appointments for clients by providing a intuitive interface.',
         projectUrl: 'https://real-estate-app-three-pi.vercel.app/',
-       
     },
     {
         id: 2,
@@ -92,7 +94,6 @@ export const projectsData = [
         shortDescription:
             'A blogging platform where users start with a plot and build a full story using a voting system. Users can submit blocks for each part of the story. The block with the most votes slides into that part of the story.',
         githubUrl: 'https://github.com/PatKeenan/improvBlog',
-      
     },
     {
         id: 3,
@@ -103,6 +104,5 @@ export const projectsData = [
             'A blogging platform where users start with a plot and build a full story using a voting system. Users can submit blocks for each part of the story. The block with the most votes slides into that part of the story.',
         githubUrl: 'https://github.com/PatKeenan/patkeenan.dev',
         projectUrl: 'https://pat-keenan.vercel.app/',
-       
     },
 ];

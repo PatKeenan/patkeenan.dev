@@ -20,9 +20,8 @@ export const Slider = (props: SliderPropsType) => {
             fullWidth={false}
             className={clsx(
                 className,
-                snap && 'snap-x snap-mandatory',
                 scrollThumbColor && scrollThumbColorOptions[scrollThumbColor],
-                'h-stack overflow-x-scroll scrollbar-thin'
+                'flex flex-col  md:flex-row overflow-x-scroll scrollbar-thin '
             )}
             {...rest}
         />

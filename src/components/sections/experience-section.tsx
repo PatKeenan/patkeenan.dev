@@ -26,10 +26,13 @@ export const Experience = (props: HomePageHeroSectionsType) => {
             maxWidth={false}
             padding="primary-x"
         >
-            <div ref={sectionRef}>
+            <div
+                ref={sectionRef}
+                className="flex"
+            >
                 <Slider
                     snap
-                    className="h-full pb-6 space-x-5 mb-8 mt-4 w-full"
+                    className="h-full pb-6 md:space-x-5 mb-8 mt-4 "
                     scrollThumbColor="primary"
                 >
                     {experienceData.map((data, index) => (

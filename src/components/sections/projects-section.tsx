@@ -23,7 +23,7 @@ export const Projects = (props: HomePageHeroSectionsType) => {
             variant="light"
             sectionTitle="Projects"
             maxWidth={false}
-            className="px-0 border border-x-0 border-y-1"
+            className="px-0 border border-x-0 border-y-1 pb-6"
             centeredContent={false}
         >
             <div ref={sectionRef2}>

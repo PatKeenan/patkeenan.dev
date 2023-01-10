@@ -38,7 +38,7 @@ export const Hero = (props: HeroProps) => {
                 className={clsx(
                     maxWidth ? siteWidth : 'w-full',
                     centeredContent && 'justify-center',
-                    'relative flex-1 v-stack h-full flex-shrink-0'
+                    'relative flex-1 v-stack min-h-full flex-shrink-0'
                 )}
             >
                 {children}
