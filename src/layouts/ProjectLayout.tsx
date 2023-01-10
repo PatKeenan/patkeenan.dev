@@ -30,12 +30,10 @@ export const ProjectLayout = ({
                         src={project.photo}
                         alt="project-photo"
                         layout="fill"
-                        objectFit="scale-down"
-                        height={500}
-                        width={500}
+                        objectFit="contain"
                     />
                 </div>
-                <div className="block mt-4">
+                <div className="block md:mt-4">
                     <h2 className="text-4xl text-white">{project.title}</h2>
                     <p className="text-sm text-gray-400 tracking-wide mt-2">
                         {project.shortDescription}
@@ -43,20 +41,26 @@ export const ProjectLayout = ({
                     <div className="flex space-x-4 mt-4">
                         {project.projectUrl ? (
                             <IconLink href={project?.projectUrl}>
-                                <FaGlobe className="h-5 w-5 my-auto mr-2" />
-                                <span>Visit Site</span>
+                                <FaGlobe className="h-5 w-5 my-auto md:mr-2" />
+                                <span className="hidden md:block">
+                                    Visit Site
+                                </span>
                             </IconLink>
                         ) : null}
                         {project.githubUrl ? (
                             <IconLink href={project?.githubUrl}>
-                                <FaGithub className="h-5 w-5 my-auto mr-2" />
-                                <span>View Code</span>
+                                <FaGithub className="h-5 w-5 my-auto md:mr-2" />
+                                <span className="hidden md:block">
+                                    View Code
+                                </span>
                             </IconLink>
                         ) : (
                             <div className="flex">
                                 <div className="inline-flex rounded-md  bg-dark-accent/40 px-3 py-2 text-dark-accent/40 cursor-not-allowed">
-                                    <FaGithub className="h-5 w-5 my-auto mr-2" />
-                                    <span>View Code</span>
+                                    <FaGithub className="h-5 w-5 my-auto md:mr-2" />
+                                    <span className="hidden md:block">
+                                        View Code
+                                    </span>
                                 </div>
                                 <div className="flex flex-col ml-1">
                                     <span className="text-xs  text-green-400 rounded-full py-1 ">
