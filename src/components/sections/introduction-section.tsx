@@ -53,11 +53,11 @@ export const Introduction = (props: HomePageHeroSectionsType) => {
                         </div>
 
                         <p className="max-w-prose mx-auto lg:mx-0">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Culpa itaque nesciunt doloribus, sed libero
-                            dignissimos laudantium, corrupti fugit mollitia
-                            facilis, animi fugiat quam modi laborum molestias!
-                            Cum cumque excepturi illum.
+                            Full stack web developer specializing in building
+                            single and multi page applications using React,
+                            NextJS, Tailwind, tRPC, and Prisma. Feel free to
+                            explore the sample projects listed below to learn
+                            more about me!
                         </p>
                         <SocialIcons />
                     </Div>
