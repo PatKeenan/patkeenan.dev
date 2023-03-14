@@ -83,7 +83,8 @@ export const projectsData = [
         photo: '/project-images/re-app-desktop.png',
         shortDescription:
             'Software created for real estate agents. This application helps agents stay organized when creating and maintaining appointments for clients by providing a intuitive interface.',
-        projectUrl: 'https://real-estate-app-three-pi.vercel.app/',
+        projectUrl: 'https://www.agentspace.io/',
+        githubUrl: 'https://github.com/PatKeenan/AgentSpace',
     },
     {
         id: 2,
