@@ -21,29 +21,17 @@ export const SocialIcons = () => {
                 <VscGithub className="mx-auto h-[80%] w-[80%]" />
             </Button>
             <Button
-                href="https://github.com/PatKeenan"
+                href="https://www.linkedin.com/in/pat-keenan/"
                 {...sharedProps}
             >
                 <FaLinkedin className="mx-auto h-[80%] w-[80%]" />
             </Button>
-            <Button
-                href="https://github.com/PatKeenan"
-                {...sharedProps}
-            >
-                <FaStackOverflow className="mx-auto h-[80%] w-[80%]" />
-            </Button>
 
             <Button
-                href="https://github.com/PatKeenan"
+                href="https://www.credly.com/badges/1629e619-d9e8-4927-a357-eb18491e8985/public_url"
                 {...sharedProps}
             >
                 <FaAws className="mx-auto h-[80%] w-[80%]" />
-            </Button>
-            <Button
-                href="https://github.com/PatKeenan"
-                {...sharedProps}
-            >
-                <MdEmail className="mx-auto h-[80%] w-[80%]" />
             </Button>
         </Div>
     );
