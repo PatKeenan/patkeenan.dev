@@ -65,10 +65,11 @@ export const Contact = (props: HomePageHeroSectionsType) => {
                         </div>
 
                         <p className="max-w-prose mx-auto lg:mx-0">
-                            Full stack web developer specializing in building
-                            single and multi page applications using React,
-                            NextJS, Tailwind, tRPC, and Prisma. Feel free to
-                            send me an email if you would like to connect!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Culpa itaque nesciunt doloribus, sed libero
+                            dignissimos laudantium, corrupti fugit mollitia
+                            facilis, animi fugiat quam modi laborum molestias!
+                            Cum cumque excepturi illum.
                         </p>
                         <SocialIcons />
                         <div>
