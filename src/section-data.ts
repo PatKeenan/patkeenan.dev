@@ -27,8 +27,8 @@ export const experienceData: ExperienceCardProps[] = [
             'Experience in turning client concepts into functional applications and leading demos to gather insights and feedback for the development team',
             'Build and maintain analytic dashboards to assist clients in gaining valuable insights for their web based applications',
             'Experience working with clients and internal teams using AGILE development practices',
-            'Construct and monitor CI/CD pipelines using Docker, Github Actions, Cypress, and AWS'
-        ],  
+            'Construct and monitor CI/CD pipelines using Docker, Github Actions, Cypress, and AWS',
+        ],
     },
     {
         title: 'Heritage House S.I.R',
@@ -41,7 +41,6 @@ export const experienceData: ExperienceCardProps[] = [
             'Scheduled and coordinated showing appointments with multiple clients',
             'Assisted in contract negotiations and closings',
             'Responsible for preparing offers and real estate documents for the home buying process',
-           
         ],
     },
     {
